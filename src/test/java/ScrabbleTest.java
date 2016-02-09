@@ -19,4 +19,11 @@ public class ScrabbleTest {
     assertEquals(2, scrabble.letters.get('D'));
   }
 
+  @Test
+  public void getScore_forUserInputRUN_returnsScore3() {
+    Scrabble scrabble = new Scrabble();
+    assertEquals(3, scrabble.getScore("RUN"));
+  }
+
+
 }

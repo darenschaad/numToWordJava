@@ -6,21 +6,31 @@ import static spark.Spark.*;
 import java.util.ArrayList;
 
 public class Scrabble {
-  public static HashMap letters = new HashMap();
 
   public static void main(String[] args) {
     // staticFileLocation("/public");
+    get("/", (request, response) -> {
+      HashMap model = new HashMap();
+      model.put("template", "templates/Scrabble.vtl");
+      return new ModelAndView(model, "templates/layout.vtl");
+    }, new VelocityTemplateEngine());
 
+    get("/results", (request, response) -> {
+      HashMap model = new HashMap();
+      String userWord = request.queryParams("userWord");
+      Integer results = getScore(userWord);
+      System.out.println("results" + results);
+      model.put("userWord", userWord);
+      model.put("results", results);
+      model.put("template", "templates/Scrabble.vtl");
+      return new ModelAndView(model, "templates/layout.vtl");
+    }, new VelocityTemplateEngine());
 
   }
 
-  public static Object getScore(char letter){
-    // letters.put('A', 1);
-    return letters.get(letter);
+  public static Integer getScore(String word){
 
-  }
-
-  public Scrabble() {
+    HashMap <Character, Integer> letters  = new HashMap();
     letters.put('A', 1);
     letters.put('B', 3);
     letters.put('C', 3);
@@ -48,5 +58,13 @@ public class Scrabble {
     letters.put('Y', 4);
     letters.put('Z', 10);
 
+    String wordUpper = word.toUpperCase();
+    char[] charArray = wordUpper.toCharArray();
+
+    Integer score = 0;
+    for (Integer i = 0; i < charArray.length; i++) {
+     score = score + (Integer) letters.get('A');
+    }
+    return score;
   }
 }

@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ping Pong</title>
-  </head>
-  <body>
-    <h1>This is our ping pong site:</h1>
+
+    <h1>This is a Scrabble score site:</h1>
     <form action="/results" method="get">
       <div class="form-group">
-        <label for="user-number">Enter a number to count to</label>
-        <input name="user-number" id="user-number" type="number">
+        <label for="userWord">Enter a word to calculate its scrabble score:</label>
+        <input name="userWord" id="userWord" type="text">
       </div>
       <button type="submit">Submit</button>
     </form>
-    #if ($userNumber)
+    #if ($results)
     <div id="display-results">
-      $userNumber
+      <h2>The score for the word "$userWord" is:</h2>
+      <h2>$results</h2>
     </div>
     #end
-  </body>
-</html>
