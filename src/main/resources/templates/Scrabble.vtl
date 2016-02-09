@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ping Pong</title>
+  </head>
+  <body>
+    <h1>This is our ping pong site:</h1>
+    <form action="/results" method="get">
+      <div class="form-group">
+        <label for="user-number">Enter a number to count to</label>
+        <input name="user-number" id="user-number" type="number">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    #if ($userNumber)
+    <div id="display-results">
+      $userNumber
+    </div>
+    #end
+  </body>
+</html>
