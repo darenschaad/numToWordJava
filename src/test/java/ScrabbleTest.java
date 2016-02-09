@@ -10,10 +10,13 @@ public class ScrabbleTest {
   @Test
   public void getScore_forUserInputA_returnsScore1() {
     Scrabble scrabble = new Scrabble();
-    // HashMap letters = new HashMap();
-    // letters = scrabble.letterLookup(letters);
-    // assertEquals(1, scrabble.getScore('A'));
     assertEquals(1, scrabble.letters.get('A'));
+  }
+
+  @Test
+  public void getScore_forUserInputD_returnsScore2() {
+    Scrabble scrabble = new Scrabble();
+    assertEquals(2, scrabble.letters.get('D'));
   }
 
 }
