@@ -1,9 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "Scrabble"
+archivesBaseName = "NumberToWords"
 version = '1.0'
-mainClassName = "Scrabble"
+mainClassName = "NumberToWords"
 
 repositories {
  mavenCentral()
