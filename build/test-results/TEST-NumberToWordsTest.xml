@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NumberToWordsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-02-10T00:10:03" hostname="epicodus-62.local" time="0.002">
+<testsuite name="NumberToWordsTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-02-10T00:38:51" hostname="epicodus-62.local" time="0.002">
   <properties/>
   <testcase name="convert_forUserInput300_returnThree_Hundred" classname="NumberToWordsTest" time="0.001"/>
+  <testcase name="convert_forUserInput313_returnThree_Hundred_Thirteen" classname="NumberToWordsTest" time="0.0"/>
   <testcase name="convert_forUserInput80_returnEighty" classname="NumberToWordsTest" time="0.0"/>
+  <testcase name="convert_forUserInput334_returnThree_Hundred_Thirty_Four" classname="NumberToWordsTest" time="0.0"/>
   <testcase name="convert_forUserInput67_returnSixty_Seven" classname="NumberToWordsTest" time="0.0"/>
   <testcase name="convert_forUserInput1_returnOne" classname="NumberToWordsTest" time="0.0"/>
   <testcase name="convert_forUserInput11_returnEleven" classname="NumberToWordsTest" time="0.0"/>

@@ -33,10 +33,15 @@ public class NumberToWordsTest {
     NumberToWords inNum = new NumberToWords();
     assertEquals("Three Hundred", inNum.convert(300));
   }
-  // @Test
-  // public void convert_forUserInput334_returnThree_Hundred_Thirty_Four() {
-  //   NumberToWords inNum = new NumberToWords();
-  //   assertEquals("Three Hundred Thirty Four", inNum.convert(334));
-  // }
+  @Test
+  public void convert_forUserInput313_returnThree_Hundred_Thirteen() {
+    NumberToWords inNum = new NumberToWords();
+    assertEquals("Three Hundred Thirteen", inNum.convert(313));
+  }
+  @Test
+  public void convert_forUserInput334_returnThree_Hundred_Thirty_Four() {
+    NumberToWords inNum = new NumberToWords();
+    assertEquals("Three Hundred Thirty Four", inNum.convert(334));
+  }
 
 }

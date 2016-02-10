@@ -7,8 +7,7 @@ import java.util.ArrayList;
 
 public class NumberToWords {
 
-  String[] smallArray = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"};
-  String[] teenArray  = {"Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+  String[] smallArray = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
   String[] tensArray  = {"Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
   String[] hundredsArray = {"One Hundred", "Two Hundred", "Three Hundred", "Four Hundred", "Five Hundred", "Six Hundred", "Seven Hundred", "Eight Hundred", "Nine Hundred"};
 
@@ -34,11 +33,8 @@ public class NumberToWords {
 
   public String convert(Integer number) {
 
-    if (number < 11){
-    return smallArray[number];
-    }
-    else if (number > 10 && number < 20) {
-      return teenArray[(number % 10) - 1];
+    if (number < 20){
+      return smallArray[number];
     }
     else if (number > 19 && number < 100){
       if (number % 10 == 0){
@@ -52,8 +48,11 @@ public class NumberToWords {
       if (number % 100 == 0){
         return hundredsArray[(number / 100) - 1 ];
       }
+      else if (number % 100 < 20){
+        return (hundredsArray[number/100 - 1] + " " + (smallArray[number % 100]));
+      }
       else {
-        return "Wrong";
+        return (hundredsArray[number/100 - 1] + " " + tensArray[((number % 100) / 10) - 2] + " " + smallArray[number % 10]);
       }
     }
 
